@@ -1,7 +1,7 @@
 # top-down-view
 Repository for ECE 5554 Computer Vision Project
 
-This repository is to hold the top-down view project for our Computer Vision course. Owner: Hiten Kothari
+This repository is to hold the top-down view project for our Computer Vision course.
 
 Team members: Hiten Kothari, Tejas Raju, Rashmi Ravindranath
 
