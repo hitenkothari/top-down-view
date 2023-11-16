@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 import matplotlib.pyplot as plt
 
-uw_image=cv2.imread("test_04_11/20231104_213128.jpg",cv2.COLOR_BGR2RGB)
+uw_image=cv2.imread("test_04_11/20231104_215651.jpg")
 uw_image=cv2.cvtColor(uw_image,cv2.COLOR_BGR2RGB)
 # plt.imshow(uw_image)
 # plt.axis("off")
