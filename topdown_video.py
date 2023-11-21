@@ -36,15 +36,13 @@ while True:
     if not ret:
         break
 
-    #img = frame.astype("float32")/255.0
-    #img = cv2.rotate(frame,cv2.ROTATE_90_CLOCKWISE)
-    
+
 
 # Apply the perspective transformation to the image
     transformed_image = cv2.warpPerspective(frame, perspective_matrix, (400, 300))  
     transformed_image = cv2.rotate(transformed_image,cv2.ROTATE_180)
     out.write(transformed_image)
-    frame_count += 1
+    #frame_count += 1
     #cv2_imshow(frame)
     #cv2_imshow(transformed_image)
     #cv2.imwrite('downloaded_image.jpg', frame)
@@ -57,6 +55,6 @@ while True:
 # Release the video objects
 cap.release()
 out.release()
-print(frame_count)
+#print(frame_count)
 # Close all OpenCV windows
 #cv2.destroyAllWindows()
