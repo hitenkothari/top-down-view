@@ -22,7 +22,7 @@ frame_height = int(cap.get(4))
 frame_rate = int(cap.get(5))
 
 # Define the codec for the output video (e.g., XVID or H.264)
-fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+fourcc = cv2.VideoWriter_fourcc(*'H.264')
 
 #points test
 # trapezoid_pts = np.array([[673 ,2645], [1648,2645], [1968,3177], [355,3177]], dtype='float32') #for test_22_11/book_user
@@ -52,11 +52,15 @@ while True:
 
 
 # Apply the perspective transformation to the image
+    start = time.time()
     transformed_image = cv2.warpPerspective(frame, perspective_matrix, (1920, 1080))  
     transformed_image = cv2.rotate(transformed_image,cv2.ROTATE_180)
-    # transformed_image = cv2.filter2D(transformed_image, -1, kernel) #sharpening
+    transformed_image = cv2.filter2D(transformed_image, -1, kernel) #sharpening
+    end = time.time()
+    print(end-start)
     out.write(transformed_image)
     frame_count += 1
+    
     #cv2_imshow(frame)
     #cv2_imshow(transformed_image)
     #cv2.imwrite('downloaded_image.jpg', frame)
