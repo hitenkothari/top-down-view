@@ -2,6 +2,28 @@ import cv2
 import numpy as np
 import time
 
+
+def gaussian_sharpening(color_image):
+    # Convert the image to float32 for better precision
+    color_image = color_image.astype(np.float32) / 255.0
+
+    # Split the color image into individual channels
+    b, g, r = cv2.split(color_image)
+
+    # Apply Gaussian blur to each channel
+    blurred_b = cv2.GaussianBlur(b, (5, 5), 1)
+    blurred_g = cv2.GaussianBlur(g, (5, 5), 1)
+    blurred_r = cv2.GaussianBlur(r, (5, 5), 1)
+
+    # Calculate the sharpened channels by subtracting the blurred channels from the original channels
+    sharpened_b = np.clip(2.0 * b - blurred_b, 0, 1.0)
+    sharpened_g = np.clip(2.0 * g - blurred_g, 0, 1.0)
+    sharpened_r = np.clip(2.0 * r - blurred_r, 0, 1.0)
+
+    # Merge the sharpened channels back into a color image
+    sharpened_image = cv2.merge([sharpened_b, sharpened_g, sharpened_r])
+    return sharpened_image
+
 sharp_kernel = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
 
 isClosed = True
@@ -32,14 +54,16 @@ while True:
     _, frame = capture.read()
     transformed_image = cv2.warpPerspective(frame, perspective_matrix, (1920, 1080)) 
     transformed_image = cv2.rotate(transformed_image,cv2.ROTATE_180)
+    # transformed_image_g = gaussian_sharpening(transformed_image)
     transformed_image_s = cv2.filter2D(transformed_image, -1, sharp_kernel) #sharpening
     # transformed_image = cv2.resize(transformed_image,(960,540))
     transformed_image_s = cv2.resize(transformed_image_s,(960,540))
+    # transformed_image_g = cv2.resize(transformed_image_g,(960,540))
     frame = cv2.polylines(frame, np.int32([trapezoid_pts]), isClosed, color, thickness)
     cv2.imshow("OG",frame)
     # cv2.imshow("TDV",transformed_image)
     cv2.imshow("TDVSHarpen",transformed_image_s)
-
+    # cv2.imshow("TDVGaussSHarpen",transformed_image_g)
 
     if cv2.waitKey(1) == ord("x"): #press x to exit the capture window and take a photo image saved as test.png (will be replaced for each capture)
         cv2.imwrite("test2511.png",frame)
@@ -47,3 +71,4 @@ while True:
 
 capture.release()
 cv2.destroyAllWindows()
+
