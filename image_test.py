@@ -8,7 +8,7 @@ plt.imshow(uw_image)
 plt.axis("off")
 plt.show()
 
-uw_points = np.array([[735,2768],[45,3656],[2487,3656],[2044,2768]],dtype='float32')
+uw_points = np.array([[735,2768],[45,3656],[2487,3656],[2044,2768]],dtype='float32') #
 td_points = np.array([[0,0],[1600,0],[1600,2560],[0,2560]],dtype='float32') #tablet resolution, can be changed as per requirement
 
 h_matrix = cv2.getPerspectiveTransform(uw_points, td_points)
