@@ -19,6 +19,8 @@ Device Used:
     Laptop: Apple Macbook Air M1
     Platform: MacOS Sonoma 14.1
 
+    Tripod: Joby Gorillapod Tripod with Phone Mount
+
 Softwares Used:
 
     Programming Language: Python 3.10.8
