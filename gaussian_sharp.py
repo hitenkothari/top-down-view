@@ -1,3 +1,5 @@
+'''Code to implement gaussian sharpening to warped image. The other hsarp filter seems to be working better hence this was dropped'''
+
 import cv2
 import numpy as np
 

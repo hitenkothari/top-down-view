@@ -1,6 +1,8 @@
 #https://learnopencv.com/camera-calibration-using-opencv/
 #https://learnopencv.com/understanding-lens-distortion/
 
+'''This code is to generate lens distortion correction parameters. This portion was not implemented in the final code because the need was not seen'''
+
 import cv2
 import numpy as np
 import os
@@ -24,7 +26,6 @@ prev_img_shape = None
 # Extracting path of individual image stored in a given directory
 images = glob.glob('./calibration_images/*.jpeg')
 for fname in images:
-    print("in")
     img = cv2.imread(fname)
     gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     # Find the chess board corners
@@ -71,7 +72,7 @@ print("tvecs : \n")
 print(tvecs)
 
 
-img = cv2.imread('test_04_11/20231104_213128.jpg')
+img = cv2.imread('test_13_11/20231113_213446.jpg')
 h,w = img.shape[:2]
 
 # Refining the camera matrix using parameters obtained by calibration
