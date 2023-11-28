@@ -7,7 +7,7 @@ Team members: Hiten Kothari, Tejas Raju, Rashmi Ravindranath
 
 Course: Virginia Tech ECE 5554
 
-More information on project website: https://sites.google.com/vt.edu/sharesight
+More detailed information on project website: https://sites.google.com/vt.edu/sharesight
 
 Device Used:
 
@@ -30,4 +30,5 @@ Softwares Used:
     Wireless Realtime Video Capturing Software: IP Webcam
         Android: https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en_US&gl=US
 
-        
+Folder/File Structure:
+    
