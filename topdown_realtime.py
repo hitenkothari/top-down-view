@@ -42,7 +42,7 @@ while True:
     cv2.imshow("Feed",subplot_image)
 
     if cv2.waitKey(1) == ord("q"): #press q to exit the capture window 
-        # cv2.imwrite("test.png",frame) #for debug purpose
+        cv2.imwrite("bone.png",subplot_image) #for debug and documentation purpose
         break
 
 capture.release()
