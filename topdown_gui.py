@@ -1,3 +1,4 @@
+import cv2
 import tkinter as tk
 import cv2
 from PIL import Image, ImageTk

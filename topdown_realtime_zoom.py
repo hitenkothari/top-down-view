@@ -43,6 +43,17 @@ perspective_matrix = cv2.getPerspectiveTransform(trapezoid_pts, rectangle_pts)
 
 capture = cv2.VideoCapture(0)
 
+# #for saving video
+# frame_rate = int(capture.get(5))
+
+# # Define the codec for the output video (e.g., XVID or H.264)
+# fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+
+# # Create an output video file
+# output_video_path = 'transformed'+'.mp4'
+# out = cv2.VideoWriter(output_video_path, fourcc, frame_rate, (1920,1080))
+
+
 while True:
     _, frame = capture.read()
     transformed_image = cv2.warpPerspective(frame, perspective_matrix, (1920, 1080))
@@ -55,6 +66,8 @@ while True:
     # cv2.imshow("User Feed",frame)
     # cv2.imshow("Top Down View",transformed_image)
     cv2.imshow("Feed",subplot_image)
+    # out.write(subplot_image) #for saving video
+
 
     if cv2.waitKey(1) == ord("q"): #press q to exit the capture window
         # cv2.imwrite("test.png",frame) #for debug purpose
