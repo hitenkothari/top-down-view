@@ -33,4 +33,15 @@ Softwares Used:
         Android: https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en_US&gl=US
 
 Folder/File Structure:
-    
+    -calibration_images/         #images for camera calibration using opencv checkerboard method
+    -output/                     #output images for debugging
+    -test_13_11/                 #test media
+    -test_23_11/                 #test media
+    -gaussian_sharp.py           #trying different sharpening technique
+    -image_test.py               #testing on single image
+    -ipwebcam_test.py            #testing on ipcamera feed
+    -lens_distortion.py          #calibration and distortion correction 
+    -realtime_old.py             #realtime feed implementation trial
+    -topdown_realtime_zoom.py    #realtime feed implementation with zoom
+    -topdown_realtime.py         #realtime feed implementaion final
+    -topdown_video.py            #testing on single video
