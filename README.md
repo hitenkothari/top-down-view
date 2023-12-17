@@ -34,7 +34,7 @@ Softwares Used:
 
 
 
-### Directory Format:
+Directory Format:
     .
     ├── calibration_images/         #images for camera calibration using opencv checkerboard method 
     ├── output/                     #output images for debugging 
